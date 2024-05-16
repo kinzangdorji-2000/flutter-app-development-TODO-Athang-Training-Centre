@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:todo/screens/Discovery.dart';
+// import 'package:todo/screens/Discovery.dart';
 // import 'package:todo/screens/Practice.dart';
+import 'package:todo/screens/travel/traveller.dart';
 // import 'package:todo/screens/PlantLanding.dart';
 // import 'package:todo/screens/Practice.dart';
 
@@ -23,8 +24,10 @@ class MyApp extends StatelessWidget {
       ),
       // home: const PlantLanding(),
       // home: Practice(),
-      home: const Discovery(),
+      // home: const Discovery(),
       // home: const Practice(),
+      home: traveller(),
+
     );
   }
 }

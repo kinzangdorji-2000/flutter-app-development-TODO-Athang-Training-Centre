@@ -6,14 +6,20 @@ class Practice extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: const Row(
+      child: Column(
         children: [
-          Text(
-            'G*FIT.',
-            style: TextStyle(
-              color: Colors.black54,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+          Container(
+            margin: EdgeInsets.only(top: 80),
+            child: Column(
+              children: [
+                Text(
+                  'AURORA',
+                  style: TextStyle(
+                    color: Colors.black87,
+                    fontFamily: 'NotoSerif_Condensed',
+                  ),
+                ),
+              ],
             ),
           ),
         ],
