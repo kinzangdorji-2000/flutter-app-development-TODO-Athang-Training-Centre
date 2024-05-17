@@ -1,32 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:todo_02/model/TaskModel.dart';
 
 class addtask extends StatefulWidget {
-  const addtask({super.key});
+  // the variables below are inherited from the parent
+  // even widgets and functions can be passed as properties
+  Function addTask;
+  num newIndex;
+  addtask({required this.addTask, required this.newIndex});
 
   @override
   State<addtask> createState() => _addtaskState();
 }
 
-// Creating task model since, we need multiple values for the same task
-class TaskModel {
-  num id;
-  String title;
-  String description;
 
-  TaskModel({
-    required this.id,
-    required this.title,
-    required this.description,
-  });
-}
 
 class _addtaskState extends State<addtask> {
   String title = '';
   String description = '';
 
-  List<TaskModel> tasks = [
-    TaskModel(id: 1, title: "Task 1", description: "Task 1 description"),
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +27,10 @@ class _addtaskState extends State<addtask> {
         ),
         body: Container(
           padding: EdgeInsets.all(16),
-          height: MediaQuery.of(context).size.height - 60,
+          height: MediaQuery
+              .of(context)
+              .size
+              .height - 60,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -69,68 +63,29 @@ class _addtaskState extends State<addtask> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              // we are adding the new parameters from the
-                              // inputs to array with the function below
-                              // since we are getting separate strings,
-                              // we need to create a task model before we push
-                              tasks.add(TaskModel(
-                                  id: tasks.length + 1,
-                                  title: title,
-                                  description: description));
-                            });
-                          },
-                          child: Text('Save'),
+                        Container(
+                          margin: EdgeInsets.only(top:16),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(16)
+                              ),
+                              backgroundColor: Colors.red,
+                              foregroundColor: Colors.white,
+                            ),
+                            onPressed: () {
+                              // the state acccesses its parent variables with widget object
+                              widget.addTask(TaskModel(id: widget.newIndex, title: title, description: description));
+                              Navigator.of(context).pop();
+                            },
+                            child: Text('Save'),
+                          ),
                         )
                       ],
                     ),
                   ],
                 ),
               ),
-              Container(
-                margin: EdgeInsets.only(top: 16),
-                child: Text(
-                  'Tasks',
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                ),
-              ),
-              Container(
-                child: Column(
-                  // we render the tasks here
-                  children: tasks.map((el) {
-                    return Container(
-                      margin: EdgeInsets.only(bottom: 12, top: 8),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  el.title,
-                                  style: TextStyle(fontSize: 24),
-                                ),
-                                Text(el.description),
-                              ],
-                            ),
-                          ),
-                          Row(
-                            children: [
-                              // Icon button is used to have a button with only icon and no texts
-                              IconButton(
-                                  onPressed: () {}, icon: Icon(Icons.edit)),
-                              IconButton(
-                                  onPressed: () {}, icon: Icon(Icons.delete)),
-                            ],
-                          )
-                        ],
-                      ),
-                    );
-                  }).toList(),
-                ),
-              )
             ],
           ),
         ));
