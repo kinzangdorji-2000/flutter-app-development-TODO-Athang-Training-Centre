@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:todo_04_expense_tracker/screens/auth/login_screen.dart';
+import 'package:todo_04_expense_tracker/plugins/local_shared_preferences.dart';
 import 'package:todo_04_expense_tracker/screens/landing/splash_screen.dart';
 
 void main() {
+  LocalStorage();
   runApp(const MyApp());
 }
 
@@ -21,4 +22,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
