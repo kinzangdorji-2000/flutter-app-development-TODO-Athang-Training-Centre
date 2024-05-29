@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:todo_04_expense_tracker/hoc/home_layout.dart';
 import 'package:todo_04_expense_tracker/plugins/local_shared_preferences.dart';
-import 'package:todo_04_expense_tracker/screens/landing/splash_screen.dart';
 
 void main() {
   LocalStorage();
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: SplashScreen(),
+      home: HomeLayout(),
     );
   }
 }

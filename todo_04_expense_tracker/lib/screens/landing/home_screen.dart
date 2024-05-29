@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:todo_04_expense_tracker/base/style/text_style.dart';
 import 'package:todo_04_expense_tracker/plugins/local_shared_preferences.dart';
 import 'package:todo_04_expense_tracker/screens/landing/splash_screen.dart';
+import 'package:todo_04_expense_tracker/widgets/landing/summary_account.dart';
+import 'package:todo_04_expense_tracker/widgets/landing/summary_home.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -18,23 +19,20 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          Center(
-            child: Text(
-              'Home',
-              style: TypoStyles().kPageHeader,
-            ),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              logoutUser();
-            },
-            child: Text('Logout'),
-          )
-        ],
-      ),
-    );
+    return SingleChildScrollView(
+          child: Column(
+          children: [
+            SummaryHome(),
+            SummaryAccounts(),
+            // SummaryTransaction()  
+          ]
+           
+      
+        )
+
+        
+
+        
+        );
   }
 }
