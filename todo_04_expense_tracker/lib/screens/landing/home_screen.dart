@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_04_expense_tracker/plugins/local_shared_preferences.dart';
+import 'package:todo_04_expense_tracker/widgets/landing/add_transaction.dart';
 import 'package:todo_04_expense_tracker/widgets/landing/summary_accounts.dart';
 import 'package:todo_04_expense_tracker/widgets/landing/summary_home.dart';
 import 'package:todo_04_expense_tracker/widgets/landing/summary_transactions.dart';
@@ -25,6 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
           SummaryHome(),
           SummaryAccounts(),
           SummaryTransactions()
+          // AddTransaction(),
         ],
       ),
     );

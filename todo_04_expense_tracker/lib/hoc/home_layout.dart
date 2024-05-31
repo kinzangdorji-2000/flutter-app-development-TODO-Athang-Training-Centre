@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:todo_04_expense_tracker/screens/account/account_screen.dart';
 import 'package:todo_04_expense_tracker/screens/landing/home_screen.dart';
+import 'package:todo_04_expense_tracker/widgets/landing/add_transaction.dart';
 
 class HomeLayout extends StatefulWidget {
   const HomeLayout({super.key});
@@ -12,10 +13,11 @@ class HomeLayout extends StatefulWidget {
 class _HomeLayoutState extends State<HomeLayout> {
   int _selectedIndex = 0;
 
-  List<String> titles = ['Home', 'Account'];
+  List<String> titles = ['Home', 'Account', 'Add Transaction'];
   List<Widget> screens = [
     HomeScreen(),
     AccountScreen(),
+    AddTransaction(),
   ];
 
   @override
@@ -43,6 +45,7 @@ class _HomeLayoutState extends State<HomeLayout> {
         showUnselectedLabels: false,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Add Transactions'),
           BottomNavigationBarItem(icon: Icon(Icons.star), label: 'Accounts'),
         ],
       ),
