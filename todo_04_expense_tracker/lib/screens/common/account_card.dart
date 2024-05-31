@@ -1,44 +1,52 @@
 import 'package:flutter/material.dart';
-import 'package:todo_04_expense_tracker/base/style/text_style.dart';
+import 'package:todo_04_expense_tracker/base/style/text_styles.dart';
 
 class AccountCard extends StatelessWidget {
-  const AccountCard({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
+      height: 180,
       width: 300,
-      color: Colors.blueAccent,
+      // color: Colors.blueAccent,
       margin: EdgeInsets.only(left: 16),
       padding: EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        border:Border.all(color:Colors.black),
+        borderRadius: BorderRadius.circular(4),
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
             child: Container(
-              height: 60,
+              height: 50,
               padding: EdgeInsets.all(6),
-              color: Colors.white,
               margin: EdgeInsets.only(bottom: 4),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('NIBL', style: TypoStyles().kSectionHeader, ),
+                  Text('NIBL', style: TypoStyles().kSectionHeader,),
                   CircleAvatar(
-                    backgroundImage: NetworkImage("https://cdn.pixabay.com/photo/2020/06/29/20/12/man-in-red-dress-5354230_1280.png"),
-                  ),
+                  backgroundImage: NetworkImage("https://cdn.pixabay.com/photo/2024/03/21/15/38/man-8647994_640.png"),
+                  )
                 ],
               ),
             ),
           ),
           Container(
+            // color:Colors.white,
             margin: EdgeInsets.only(bottom: 4),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Nu. 12000', style: TypoStyles().kPageHeader),
-                Text('Nu. 1200 this month', style: TypoStyles().kSectionHeader,),
+                Text(
+                  'Nu. 12000',
+                  style: TypoStyles().kPageHeader,
+                ),
+                Text(
+                  'Nu. 1200 this month',
+                  style: TypoStyles().kSectionHeader,
+                ),
               ],
             ),
           ),

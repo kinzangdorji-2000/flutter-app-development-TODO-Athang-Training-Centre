@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo_04_expense_tracker/base/style/text_style.dart';
+import 'package:todo_04_expense_tracker/base/style/text_styles.dart';
 import 'package:todo_04_expense_tracker/hoc/home_layout.dart';
 import 'package:todo_04_expense_tracker/plugins/local_shared_preferences.dart';
 import 'package:todo_04_expense_tracker/screens/auth/login_screen.dart';

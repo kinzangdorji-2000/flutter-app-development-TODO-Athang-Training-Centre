@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:todo_04_expense_tracker/plugins/local_shared_preferences.dart';
-import 'package:todo_04_expense_tracker/screens/landing/splash_screen.dart';
-import 'package:todo_04_expense_tracker/widgets/landing/summary_account.dart';
+import 'package:todo_04_expense_tracker/widgets/landing/summary_accounts.dart';
 import 'package:todo_04_expense_tracker/widgets/landing/summary_home.dart';
-
+import 'package:todo_04_expense_tracker/widgets/landing/summary_transactions.dart';
+import '../splash_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -20,19 +20,13 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-          child: Column(
-          children: [
-            SummaryHome(),
-            SummaryAccounts(),
-            // SummaryTransaction()  
-          ]
-           
-      
-        )
-
-        
-
-        
-        );
-  }
+      child: Column(
+        children: [
+          SummaryHome(),
+          SummaryAccounts(),
+          SummaryTransactions()
+        ],
+      ),
+    );
+   }
 }

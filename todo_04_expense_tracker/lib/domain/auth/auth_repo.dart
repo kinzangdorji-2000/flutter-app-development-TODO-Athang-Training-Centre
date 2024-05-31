@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'package:todo_04_expense_tracker/domain/auth/auth_model.dart';
-import 'package:todo_04_expense_tracker/plugins/http.dart';
-import 'package:todo_04_expense_tracker/plugins/local_shared_preferences.dart';
+import '../../plugins/http.dart';
+import '../../plugins/local_shared_preferences.dart';
+import 'auth_model.dart';
 
 Future loginWithEmailAndPassword() async {
   final res = await PostRequest('authentication', <String, String>{

@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:todo_04_expense_tracker/hoc/home_layout.dart';
-import 'package:todo_04_expense_tracker/plugins/local_shared_preferences.dart';
+import 'package:todo_04_expense_tracker/plugins/local_notifications.dart';
+import 'package:todo_04_expense_tracker/screens/splash_screen.dart';
+import 'plugins/local_shared_preferences.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await LocalNotification.initialize();
   LocalStorage();
+  // LocalNotificationService.initialize();
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,7 +24,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: HomeLayout(),
+      home: SplashScreen(),
+      // home: HomeLayout(),
     );
   }
 }

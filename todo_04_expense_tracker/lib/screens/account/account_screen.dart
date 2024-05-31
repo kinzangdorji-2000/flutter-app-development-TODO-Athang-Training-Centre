@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:todo_04_expense_tracker/domain/account/account_model.dart';
-import 'package:todo_04_expense_tracker/domain/account/account_repo.dart';
-import 'package:todo_04_expense_tracker/widgets/common/DataLoading.dart';
+
+import '../../domain/account/account_model.dart';
+import '../../domain/account/account_repo.dart';
+import '../../widgets/common/DataLoading.dart';
 
 class AccountScreen extends StatefulWidget {
   const AccountScreen({super.key});

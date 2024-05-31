@@ -3,7 +3,6 @@ import 'package:todo_04_expense_tracker/domain/auth/auth_model.dart';
 import 'package:todo_04_expense_tracker/domain/auth/auth_repo.dart';
 import 'package:todo_04_expense_tracker/hoc/home_layout.dart';
 
-
 class LoginScreen extends StatefulWidget {
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -107,7 +106,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 48,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Color.fromARGB(255, 45, 133, 234),
+                          backgroundColor: Colors.blueAccent,
                           foregroundColor: Colors.white,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
@@ -146,7 +145,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8),
                             ),
-                            foregroundColor: const Color.fromARGB(255, 9, 9, 9)),
+                            foregroundColor: Colors.black),
                         onPressed: () {},
                         child: Text('Don\'t have an account? Sign up.'),
                       ),
